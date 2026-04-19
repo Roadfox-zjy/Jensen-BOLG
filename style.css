@@ -1,0 +1,165 @@
+/* 全局重置，简洁美观，适配Jensen专属博客 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* 系统默认字体，避免报错，简洁耐看 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa; /* 柔和背景，提升美观度 */
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 40px 0;
+  min-height: 100vh;
+}
+
+/* 容器，居中布局，提升层次感 */
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 60px;
+}
+
+/* 侧边栏，Jensen专属风格，简洁大气 */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.blog-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #222; /* 标题醒目，贴合个人博客 */
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  transition: all 0.2s ease;
+}
+.blog-title:hover {
+  color: #0071e3; /* hover效果，提升交互感 */
+}
+
+.sidebar-space {
+  flex: 1; /* 占位，让标签靠下，布局更合理 */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-item {
+  font-size: 12px;
+  color: #666666;
+  background-color: #e9ecef;
+  padding: 3px 10px;
+  border-radius: 15px; /* 圆角设计，更柔和 */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.tag-item:hover {
+  background-color: #dee2e6;
+  color: #333;
+  border-color: #ced4da;
+  transform: translateY(-1px); /* 轻微上浮，增强交互 */
+}
+
+/* 主内容区，文章列表样式，简洁美观 */
+.content {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+.post-item:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.post-date {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 400;
+}
+
+.post-link {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.post-link:hover {
+  color: #0071e3;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.post-tag {
+  font-size: 11px;
+  color: #777777;
+  background-color: #f1f3f5;
+  padding: 1px 8px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+/* 响应式适配，小屏幕友好 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .blog-title {
+    margin-bottom: 0;
+  }
+  .sidebar-space {
+    display: none;
+  }
+  .tags {
+    gap: 6px;
+  }
+  .post-item {
+    padding: 12px;
+  }
+}
